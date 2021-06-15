@@ -28,7 +28,7 @@ def after_request(response):
     return response
 
 
-vs = VirtualStockAccount('4107056005@smail.nchu.edu.tw', 's830s20')
+vs = VirtualStockAccount(account, passwd)
 
 
 @app.route('/')
