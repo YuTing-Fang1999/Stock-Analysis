@@ -64,16 +64,12 @@ def myMACD(close_arr,calcParams = [12, 26, 9]):
     return macd
 
 def macd_buy(arr):
-    if arr[0] < 0:
-        if all(x>y for x, y in zip(arr[:-1], arr[1:-1])):
-            if arr[-2] < arr[-1]:
+    if ###########secret^^##############
                 return True 
     return False 
 
 def macd_sell(arr):
-    if arr[0] > 0:
-        if all(x<=y for x, y in zip(arr[:-1], arr[1:-1])):
-            if arr[-2] > arr[-1]:
+    if ###########secret^^##############
                 return True 
     return False 
     
@@ -314,45 +310,8 @@ def toSeasonal(df):
 
 def mystrategy(data):
 
-    # .drop_duplicates(['stock_id', 'date'], keep='last')#.pivot(index='date', columns='stock_id')
-    股本 = data.get('股本合計', 1)
-    price = data.get('收盤價', 200)
-    當天股價 = price[:股本.index[-1]].iloc[-1]
-    當天股本 = 股本.iloc[-1]
-    市值 = 當天股本 * 當天股價 / 10 * 1000
-
-    df1 = toSeasonal(data.get('投資活動之淨現金流入（流出）', 5))
-    df2 = toSeasonal(data.get('營業活動之淨現金流入（流出）', 5))
-    自由現金流 = (df1 + df2).iloc[-4:].mean()
-
-    稅後淨利 = data.get('本期淨利（淨損）', 1)
-
-    # 股東權益，有兩個名稱，有些公司叫做權益總計，有些叫做權益總額
-    # 所以得把它們抓出來
-    權益總計 = data.get('權益總計', 1)
-    權益總額 = data.get('權益總額', 1)
-
-    # 並且把它們合併起來
-    權益總計.fillna(權益總額, inplace=True)
-
-    股東權益報酬率 = 稅後淨利.iloc[-1] / 權益總計.iloc[-1]
-
-    營業利益 = data.get('營業利益（損失）', 5)
-    營業利益成長率 = (營業利益.iloc[-1] / 營業利益.iloc[-5] - 1) * 100
-
-    當月營收 = data.get('當月營收', 4) * 1000
-    當季營收 = 當月營收.iloc[-4:].sum()
-    市值營收比 = 市值 / 當季營收
-
-    condition1 = (市值 < 1e10)
-    condition2 = 自由現金流 > 自由現金流.describe().loc["50%"]
-    condition3 = 股東權益報酬率 > 股東權益報酬率.describe().loc["50%"]
-    condition4 = 營業利益成長率 > 營業利益成長率.describe().loc["50%"]
-    condition5 = 市值營收比 < 5
-    select_stock = condition1 & condition2 & condition3 & condition4 & condition5
-
+    ###########secret^^##############
     return select_stock[select_stock]
-#     return 營業利益成長率
 
 
 def good_sid():
