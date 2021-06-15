@@ -1,0 +1,4 @@
+node_modules
+flask後端/.env
+flask後端/__pycache__
+flask後端/.vscode
