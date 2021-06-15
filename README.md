@@ -16,7 +16,6 @@
 利用Cmoney分析策略效果
 #### MACD
 ![image](https://github.com/pupumeme/Final-Project/blob/main/cmoney%E5%88%86%E6%9E%90.png)
-#### 績優股
-![image](https://github.com/pupumeme/Final-Project/blob/main/%E7%B8%BE%E5%84%AA%E8%82%A1%E7%AD%96%E7%95%A5.JPG)
+
 
 
